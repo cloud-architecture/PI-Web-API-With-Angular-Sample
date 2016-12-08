@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
-import 'rxjs/add/operator/map'
+import { Headers, Http, Response } from '@angular/http';
+import { Observable } from "rxjs/Observable";
 
 
 
 @Injectable()
 export class PIWebAPIService {
-    private piWebApiBaseUrl = 'https://marc-web-sql.marc.net/piwebapi';  // URL to web api
+    private piWebApiBaseUrl = 'https://cross-platform-lab-uc2016.osisoft.com/piwebapi/';  // URL to web api
     constructor(private http: Http)
      { 
 
@@ -14,7 +14,7 @@ export class PIWebAPIService {
 
      getHeader() : any {
          var authHeader = new Headers();
-         authHeader.append('Authorization', 'Basic ' + btoa('username:password')); 
+         authHeader.append('Authorization', 'Basic ' + btoa('pilabuser:PIWebAPI2015')); 
          return authHeader;
      }
 

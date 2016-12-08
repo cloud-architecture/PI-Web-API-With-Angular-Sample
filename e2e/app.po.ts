@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class SamplePiwebappAngular2Page {
+export class PIWebAPIWithAngular2Page {
   navigateTo() {
     return browser.get('/');
   }

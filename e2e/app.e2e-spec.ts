@@ -1,10 +1,10 @@
-import { SamplePiwebappAngular2Page } from './app.po';
+import { PIWebAPIWithAngular2Page } from './app.po';
 
-describe('sample-piwebapp-angular2 App', function() {
-  let page: SamplePiwebappAngular2Page;
+describe('pi-web-api-with-angular2 App', function() {
+  let page: PIWebAPIWithAngular2Page;
 
   beforeEach(() => {
-    page = new SamplePiwebappAngular2Page();
+    page = new PIWebAPIWithAngular2Page();
   });
 
   it('should display message saying app works', () => {
