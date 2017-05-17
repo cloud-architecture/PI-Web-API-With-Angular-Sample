@@ -4,9 +4,9 @@ Using PI Web API with Angular 2
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.22-1.
 
 
-##Organization
+## Organization
 This repository has the sample application from the blog post published on PI Square:
-https://pisquare.osisoft.com/community/developers-club/blog/2016/11/16/using-pi-web-api-with-angular2
+https://pisquare.osisoft.com/community/developers-club/blog/2016/12/08/using-pi-web-api-with-angular2
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -36,8 +36,8 @@ Run `ng github-pages:deploy` to deploy to Github Pages.
 
 To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-##Licensing
-Copyright 2016 OSIsoft, LLC.
+## Licensing
+Copyright 2017 OSIsoft, LLC.
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
