@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PIWebAPIService, PIItemsStreamValues, PIPoint, PITimedValue, PIStreamValues } from 'angular-piwebapi';
+import { PIWebAPIService, PIItemsStreamValues, PIPoint, PITimedValue, PIStreamValues, PIElement, PIAttribute, PIDataServer } from 'angular-piwebapi';
 
 
 export class ComboboxOption {
@@ -228,5 +228,30 @@ export class AppComponent {
         this.piPointError = error.data
         this.piPointExistsValue = false
     });
+
+    let point1webId = this.piWebApiHttpService.webIdHelper.generateWebIdByPath("\\\\PISRV1\\SINUSOID", PIPoint.name, null);
+    let point2webId = this.piWebApiHttpService.webIdHelper.generateWebIdByPath("\\\\PISRV1\\CDT158", PIPoint.name, null);
+    let point3webId = this.piWebApiHttpService.webIdHelper.generateWebIdByPath("\\\\PISRV1\\SINUSOIDU", PIPoint.name, null);
+    let piAttributeWebId = this.piWebApiHttpService.webIdHelper.generateWebIdByPath("\\\\PISRV1\\Universities\\UC Davis\\Buildings\\Academic Surge Building|Electricity Totalizer", PIAttribute.name, PIElement.name);
+    let piElementWebId = this.piWebApiHttpService.webIdHelper.generateWebIdByPath("\\\\PISRV1\\Universities\\UC Davis\\Buildings\\Academic Surge Building", PIElement.name, null);
+    let piDataServerWebId = this.piWebApiHttpService.webIdHelper.generateWebIdByPath("\\\\PISRV1", PIDataServer.name, null);
+
+    let piDataServer : PIDataServer = null;
+    let piAttribute : PIAttribute = null;
+    let piElement : PIElement  = null;
+    this.piWebApiHttpService.dataServer.get(piDataServerWebId).subscribe(res => {
+        piDataServer = res;
+    });
+    this.piWebApiHttpService.attribute.get(piAttributeWebId).subscribe(res => {
+        piAttribute = res;
+    });
+    this.piWebApiHttpService.element.get(piElementWebId).subscribe(res => {
+        piElement = res;
+    });
+
+
+    var piAttributeWebIdInfo = this.piWebApiHttpService.webIdHelper.getWebIdInfo(piAttributeWebId);
+    var piElementWebIdInfo = this.piWebApiHttpService.webIdHelper.getWebIdInfo(piElementWebId);
+    var piDataServerWebIdInfo = this.piWebApiHttpService.webIdHelper.getWebIdInfo(piDataServerWebId);
   }
 }
