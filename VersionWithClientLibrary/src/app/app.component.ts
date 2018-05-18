@@ -62,7 +62,7 @@ export class AppComponent {
     this.piWebApiHttpService.dataServer.getByPath('\\\\MARC-PI2016').subscribe(res => {
         console.log(res);
 		var pointName = "SINUSOID_TEST74" + Math.trunc(100000*Math.random());
-        var newPoint = new PIPoint(null, null, pointName, null, "Test PI Point for AngularJS PI Web API Client", "classic", "float32", null, null, null, false);    
+        var newPoint = new PIPoint(null,null, pointName, null,  "Test PI Point for AngularJS PI Web API Client", "classic", "float32", null, null, null,null, null, false);    
         this.piWebApiHttpService.dataServer.createPoint(res.WebId, newPoint).subscribe(res => {
             console.log(res);
         }, error => {
@@ -214,7 +214,7 @@ export class AppComponent {
 
         });
 
-        this.piWebApiHttpService.stream.getRecorded(this.webId, null, null, this.endTime, null, null, null, null, this.startTime).subscribe(res => {
+        this.piWebApiHttpService.stream.getRecorded(this.webId, null, null, null, this.endTime, null, null, null, null, this.startTime).subscribe(res => {
             this.recordedData = res
           }, error => {
             this.recordedError = error
